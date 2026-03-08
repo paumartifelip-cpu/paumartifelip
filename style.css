@@ -203,6 +203,149 @@ h4 {
   position: relative;
 }
 
+/* ============================================================
+   SECCIÓN VISIÓN — Diseño Apple Premium
+   ============================================================ */
+.vision-section {
+  background: linear-gradient(160deg, #0a0a0f 0%, #111128 40%, #0d1a33 100%);
+  padding: 12rem 2rem 10rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo ambient glow */
+.vision-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(41, 151, 255, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vision-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vision-eyebrow {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+
+.vision-headline {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: #f5f5f7;
+  margin-bottom: 2rem;
+}
+
+.vision-highlight {
+  background: linear-gradient(135deg, #2997ff, #30d4a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vision-subheadline {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: #a1a1a6;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.vision-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #2997ff, #30d4a0);
+  margin: 5rem auto;
+  border-radius: 2px;
+}
+
+/* — Tres pilares — */
+.vision-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.vision-pillar {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.3s ease;
+}
+
+.vision-pillar:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.pillar-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.vision-pillar h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f5f5f7;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.vision-pillar p {
+  font-size: 0.95rem;
+  color: #86868b;
+  line-height: 1.6;
+}
+
+/* — Cierre objetivo — */
+.vision-objetivo {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #a1a1a6;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.vision-objetivo strong {
+  color: #f5f5f7;
+}
+
+@media (max-width: 768px) {
+  .vision-section {
+    padding: 9rem 1.5rem 6rem;
+  }
+
+  .vision-pillars {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .vision-divider {
+    margin: 3rem auto;
+  }
+}
+
+
+
 .pb-0 {
   padding-bottom: 0;
 }
