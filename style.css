@@ -207,6 +207,10 @@ h4 {
   padding-bottom: 0;
 }
 
+.pt-0 {
+  padding-top: 0;
+}
+
 .pt-8 {
   padding-top: 8rem;
 }
@@ -252,6 +256,45 @@ h4 {
 .bg-light {
   background-color: var(--color-bg-light);
   color: var(--color-text-light);
+}
+
+/* SOBRE PAU (Biografía) */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  transition: all 0.5s var(--ease);
+  filter: grayscale(20%);
+}
+
+.about-image-wrapper:hover .about-image {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
+
+.placeholder-img {
+  filter: grayscale(100%) opacity(0.5);
+}
+
+.about-text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* HERO SECTION */
@@ -498,6 +541,255 @@ h4 {
   gap: 2rem;
 }
 
+/* BLOQUE COMUNIDAD SKOOL */
+.skool-banner {
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.skool-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 153, 255, 0.5), transparent);
+}
+
+.skool-content {
+  position: relative;
+  z-index: 2;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(0, 113, 227, 0.4);
+  transition: box-shadow 0.3s var(--ease);
+}
+
+.shadow-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 113, 227, 0.8);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.price-tag {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+/* TESTIMONIOS (Double Marquee Layout) */
+.testimonials-section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.testimonials-slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  overflow: hidden;
+  /* Mascara para difuminar los bordes laterales y dar efecto infinito elegante */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.testimonials-marquee-container {
+  display: flex;
+  width: max-content;
+}
+
+.testimonials-marquee-content {
+  display: flex;
+  gap: 2rem;
+  padding-right: 2rem;
+  /* Espaciado con el duplicado */
+  animation: scroll-left 160s linear infinite;
+}
+
+.testimonials-marquee-container.reverse .testimonials-marquee-content {
+  animation: scroll-right 160s linear infinite;
+  animation-direction: reverse;
+}
+
+.testimonials-marquee-container:hover .testimonials-marquee-content {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  width: 320px;
+  flex-shrink: 0;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Light theme adaptations for testimonials */
+.bg-light .testimonial-card {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Brillo sutil superior en las tarjetas */
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.quote-icon {
+  font-size: 4rem;
+  color: var(--color-accent);
+  opacity: 0.2;
+  position: absolute;
+  top: -10px;
+  left: 1.5rem;
+  font-family: serif;
+  user-select: none;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.bg-light .testimonial-text {
+  color: #333;
+}
+
+.testimonial-author {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+}
+
+.bg-light .testimonial-author {
+  color: #000;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* MARQUEE (Empresas que confían en Pau) */
+.trust-section {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 3rem;
+  /* Espacio entre los bloques duplicados */
+  /* Máscara para difuminar los bordes laterales y dar aspecto premium */
+  mask-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 15%,
+      rgba(0, 0, 0, 1) 85%,
+      rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 15%,
+      rgba(0, 0, 0, 1) 85%,
+      rgba(0, 0, 0, 0) 100%);
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+  /* Animación principal ajustada para 30s de duración por ciclo */
+  animation: scroll 30s linear infinite;
+}
+
+.marquee-content span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  transition: color 0.3s var(--ease);
+}
+
+.marquee-content span:hover {
+  color: #fff;
+}
+
+.marquee-content span.gradient-text {
+  /* Restablecer y aplicar gradiente explícito si es necesario, aunque hereda de .gradient-text */
+  background: linear-gradient(135deg, #2997ff, #aebce5, #ff9a9e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - 3rem));
+    /* 3rem es el gap entre marquees */
+  }
+}
+
+/* Pausar al hacer hover (opcional para interactividad) */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
 /* FOOTER */
 footer {
   padding: 2rem;
@@ -523,13 +815,34 @@ footer {
 
 .reveal-section {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s var(--ease);
+  transform: translateY(60px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
 }
 
 .reveal-section.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.reveal-delay-5 {
+  transition-delay: 0.5s;
 }
 
 .hover-lift {
@@ -550,6 +863,8 @@ footer {
 }
 
 /* RESPONSIVE */
+@media (max-width: 900px) {}
+
 @media (max-width: 768px) {
 
   .comparison-grid,
@@ -564,5 +879,10 @@ footer {
   .nav-links {
     display: none;
     /* simple mobile nav */
+  }
+
+  .masonry-grid {
+    column-count: 1;
+    /* Para móvil una sola columna */
   }
 }
