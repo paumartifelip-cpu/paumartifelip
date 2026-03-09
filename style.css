@@ -735,9 +735,17 @@ h4 {
 
 .badge-outline {
   background-color: transparent;
-  border: 1px solid var(--color-text-light);
-  color: var(--color-text-light);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #424245;
 }
+
+/* Badge outline en contexto oscuro = claro */
+.dark-section .badge-outline,
+.glass-dark .badge-outline {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+}
+
 
 .program-card .outcome {
   color: #1d1d1f !important;
@@ -1228,6 +1236,10 @@ footer {
     padding-top: 1.5rem;
   }
 
+  .comparison-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
 
   .section {
     padding: 6rem 1.5rem;
