@@ -1,16 +1,16 @@
 /* VARIABLES */
 :root {
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --color-bg: #000000;
-  --color-text: #f5f5f7;
-  --color-text-secondary: #86868b;
-  --color-bg-light: #f5f5f7;
-  --color-text-light: #1d1d1f;
-  --color-accent: #2997ff;
-  --color-glass: rgba(0, 0, 0, 0.7);
-  --color-glass-light: rgba(255, 255, 255, 0.7);
-  --color-border: #424245;
-  --color-border-light: #d2d2d7;
+  --color-bg: #0c1230;
+  --color-text: #f3f1ff;
+  --color-text-secondary: #8e96b8;
+  --color-bg-light: #f3f1ff;
+  --color-text-light: #1b2240;
+  --color-accent: #4285f4;
+  --color-glass: rgba(12, 18, 48, 0.8);
+  --color-glass-light: rgba(243, 241, 255, 0.8);
+  --color-border: #2b3566;
+  --color-border-light: #dcd8f4;
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --nav-height: 48px;
 }
@@ -82,7 +82,7 @@ h4 {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #2997ff, #aebce5, #ff9a9e);
+  background: linear-gradient(135deg, #4285f4, #8b7cf6, #c58af9);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -207,7 +207,7 @@ h4 {
    SECCIÓN VISIÓN — Diseño Apple Premium
    ============================================================ */
 .vision-section {
-  background: #000;
+  background: #0c1230;
   padding: 12rem 2rem 10rem;
   position: relative;
   overflow: hidden;
@@ -246,12 +246,12 @@ h4 {
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.04em;
-  color: #f5f5f7;
+  color: #f3f1ff;
   margin-bottom: 2rem;
 }
 
 .vision-highlight {
-  background: linear-gradient(135deg, #2997ff, #30d4a0);
+  background: linear-gradient(135deg, #4285f4, #34a853);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -259,7 +259,7 @@ h4 {
 
 .vision-subheadline {
   font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-  color: #a1a1a6;
+  color: #a9b0cf;
   line-height: 1.6;
   max-width: 700px;
   margin: 0 auto;
@@ -269,7 +269,7 @@ h4 {
 .vision-divider {
   width: 60px;
   height: 2px;
-  background: linear-gradient(90deg, #2997ff, #30d4a0);
+  background: linear-gradient(90deg, #4285f4, #34a853);
   margin: 5rem auto;
   border-radius: 2px;
 }
@@ -305,28 +305,28 @@ h4 {
 .vision-pillar h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #f5f5f7;
+  color: #f3f1ff;
   margin-bottom: 0.75rem;
   letter-spacing: -0.02em;
 }
 
 .vision-pillar p {
   font-size: 0.95rem;
-  color: #86868b;
+  color: #8e96b8;
   line-height: 1.6;
 }
 
 /* — Cierre objetivo — */
 .vision-objetivo {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: #a1a1a6;
+  color: #a9b0cf;
   line-height: 1.7;
   max-width: 650px;
   margin: 0 auto;
 }
 
 .vision-objetivo strong {
-  color: #f5f5f7;
+  color: #f3f1ff;
 }
 
 @media (max-width: 768px) {
@@ -445,14 +445,14 @@ h4 {
 .about-text-content .body-text {
   font-size: 1.15rem;
   line-height: 1.6;
-  color: #424245;
+  color: #2b3566;
   margin-bottom: 1.5rem;
 }
 
 .about-text-content .body-large {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #1d1d1f;
+  color: #1b2240;
   border-left: 3px solid var(--color-accent);
   padding-left: 1.5rem;
   margin-top: 2rem;
@@ -529,7 +529,7 @@ h4 {
 .card {
   padding: 3rem;
   border-radius: 20px;
-  background-color: #111;
+  background-color: #131b42;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.4s var(--ease);
   color: #fff;
@@ -546,11 +546,11 @@ h4 {
   -webkit-backdrop-filter: none;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  color: #1d1d1f;
+  color: #1b2240;
 }
 
 .card.glass h3 {
-  color: #1d1d1f !important;
+  color: #1b2240 !important;
 }
 
 .card:hover {
@@ -571,7 +571,7 @@ h4 {
 }
 
 .card-icon.check {
-  background-color: #28cd41;
+  background-color: #34a853;
 }
 
 .feature-list {
@@ -594,7 +594,7 @@ h4 {
 }
 
 .after-card .feature-list li {
-  color: #424245;
+  color: #2b3566;
 }
 
 .after-card .feature-list li::before {
@@ -612,7 +612,7 @@ h4 {
 .feature-box {
   padding: 3rem;
   border-radius: 20px;
-  background-color: #111;
+  background-color: #131b42;
   border: 1px solid var(--color-border);
 }
 
@@ -627,12 +627,12 @@ h4 {
 }
 
 .feature-box.highlight {
-  background: linear-gradient(135deg, #111 0%, #1a1a2e 100%);
+  background: linear-gradient(135deg, #131b42 0%, #1c2657 100%);
   border-color: #3f3f6e;
 }
 
 .feature-box.highlight h4 {
-  color: #aebce5;
+  color: #8b7cf6;
 }
 
 /* PROGRAMS (Conferencias y Workshops) */
@@ -647,30 +647,30 @@ h4 {
 }
 
 .program-card h3 {
-  color: #1d1d1f !important;
+  color: #1b2240 !important;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
 .program-card .subtitle {
-  color: #424245 !important;
+  color: #2b3566 !important;
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
 .program-card .desc {
-  color: #6e6e73 !important;
+  color: #5d6690 !important;
   margin-bottom: 1.5rem;
   line-height: 1.5;
 }
 
 .program-card .takeaways li {
-  color: #6e6e73 !important;
+  color: #5d6690 !important;
 }
 
 .program-card .takeaways strong {
-  color: #1d1d1f;
+  color: #1b2240;
 }
 
 .program-card .outcome {
@@ -685,8 +685,8 @@ h4 {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.4rem 1rem;
-  background: rgba(0, 153, 255, 0.1);
-  color: #0099ff;
+  background: rgba(66, 133, 244, 0.1);
+  color: #4285f4;
   border-radius: 980px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -704,17 +704,17 @@ h4 {
 
 
 .glass-dark {
-  background: #1d1d1f;
-  color: #f5f5f7;
+  background: #1b2240;
+  color: #f3f1ff;
   border: none;
 }
 
 .glass-dark .desc {
-  color: #86868b;
+  color: #8e96b8;
 }
 
 .glass-dark .subtitle {
-  color: #a1a1a6;
+  color: #a9b0cf;
 }
 
 .badge {
@@ -730,13 +730,13 @@ h4 {
 
 .glass-dark .badge {
   background-color: #fff;
-  color: #000;
+  color: #0c1230;
 }
 
 .badge-outline {
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  color: #424245;
+  color: #2b3566;
 }
 
 /* Badge outline en contexto oscuro = claro */
@@ -748,7 +748,7 @@ h4 {
 
 
 .program-card .outcome {
-  color: #1d1d1f !important;
+  color: #1b2240 !important;
   font-weight: 500;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
@@ -762,7 +762,7 @@ h4 {
 .glass-dark .desc,
 .glass-dark .subtitle,
 .glass-dark .takeaways li {
-  color: #a1a1a6 !important;
+  color: #a9b0cf !important;
 }
 
 .glass-dark .takeaways strong {
@@ -800,7 +800,7 @@ h4 {
 .takeaways ul {
   margin-top: 0.5rem;
   margin-left: 1.5rem;
-  color: #86868b;
+  color: #8e96b8;
 }
 
 .takeaways li {
@@ -817,8 +817,8 @@ h4 {
 .skool-banner {
   padding: 6rem 3rem;
   border-radius: 40px;
-  border: 1px solid rgba(0, 153, 255, 0.2);
-  background: radial-gradient(circle at top right, rgba(0, 153, 255, 0.08), transparent 60%),
+  border: 1px solid rgba(66, 133, 244, 0.2);
+  background: radial-gradient(circle at top right, rgba(66, 133, 244, 0.08), transparent 60%),
     rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
@@ -834,7 +834,7 @@ h4 {
   left: -10%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(0, 153, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(66, 133, 244, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -862,7 +862,7 @@ h4 {
 .skool-feature-text {
   font-size: 1rem;
   line-height: 1.4;
-  color: #f5f5f7;
+  color: #f3f1ff;
 }
 
 .skool-feature-text strong {
@@ -927,7 +927,7 @@ h4 {
 .btn-whatsapp:hover {
   transform: translateY(-2px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  background-color: #f5f5f7;
+  background-color: #f3f1ff;
 }
 
 
@@ -937,12 +937,12 @@ h4 {
 }
 
 .shadow-glow {
-  box-shadow: 0 0 20px rgba(0, 113, 227, 0.4);
+  box-shadow: 0 0 20px rgba(26, 115, 232, 0.4);
   transition: box-shadow 0.3s var(--ease);
 }
 
 .shadow-glow:hover {
-  box-shadow: 0 0 30px rgba(0, 113, 227, 0.8);
+  box-shadow: 0 0 30px rgba(26, 115, 232, 0.8);
 }
 
 .text-glow {
@@ -1042,7 +1042,7 @@ h4 {
 .testimonial-author {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #111;
+  color: #131b42;
   margin: 0;
 }
 
@@ -1115,7 +1115,7 @@ h4 {
 
 .marquee-content span.gradient-text {
   /* Restablecer y aplicar gradiente explícito si es necesario, aunque hereda de .gradient-text */
-  background: linear-gradient(135deg, #2997ff, #aebce5, #ff9a9e);
+  background: linear-gradient(135deg, #4285f4, #8b7cf6, #c58af9);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1141,8 +1141,8 @@ h4 {
 /* FOOTER */
 footer {
   padding: 2rem;
-  background-color: #000;
-  color: #86868b;
+  background-color: #0c1230;
+  color: #8e96b8;
   font-size: 0.9rem;
   border-top: 1px solid var(--color-border);
 }
@@ -1254,4 +1254,32 @@ footer {
     column-count: 1;
     /* Para móvil una sola columna */
   }
+}
+/* ACENTO CORPORATIVO: franja de 4 colores */
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #4285f4 0 25%, #ea4335 25% 50%, #fbbc05 50% 75%, #34a853 75% 100%);
+  opacity: 0.9;
+}
+
+/* HERO CORPORATIVO: degradado en lugar del vídeo */
+.video-bg {
+  display: none;
+}
+
+.video-background-wrapper {
+  opacity: 1;
+  background:
+    radial-gradient(ellipse 60% 50% at 18% 20%, rgba(66, 133, 244, 0.35), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 85% 80%, rgba(139, 124, 246, 0.28), transparent 70%),
+    linear-gradient(180deg, #0c1230 0%, #131b42 100%);
+}
+
+.video-overlay {
+  background: radial-gradient(circle, rgba(12, 18, 48, 0) 0%, rgba(12, 18, 48, 0.6) 100%);
 }
