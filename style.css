@@ -1773,3 +1773,124 @@ figure.photo {
   background: rgba(66, 133, 244, 0.1);
   color: #4285f4;
 }
+
+/* =========================================================
+   TOQUES DE DEGRADADO GOOGLE EN TODA LA WEB
+   ========================================================= */
+:root {
+  --g-blue-green: linear-gradient(115deg, #4285f4 15%, #34a853 95%);
+  --g-red-yellow: linear-gradient(120deg, #ea4335 0%, #f86d2a 45%, #fbbc05 100%);
+  --g-blue-lilac: linear-gradient(120deg, #4285f4 0%, #8b7cf6 55%, #c58af9 100%);
+  --g-four: linear-gradient(90deg, #4285f4 0 25%, #ea4335 25% 50%, #fbbc05 50% 75%, #34a853 75% 100%);
+}
+
+/* Palabras destacadas en títulos */
+.g-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  padding-bottom: 0.06em;
+}
+.g-bg { background-image: var(--g-blue-green); }
+.g-ry { background-image: var(--g-red-yellow); }
+.g-bl { background-image: var(--g-blue-lilac); }
+
+/* Barrita de 4 colores bajo los títulos de sección */
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  margin-top: 0.9rem;
+  background: var(--g-four);
+}
+.section-heading.center-text::after,
+.center-text .section-heading::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Secciones oscuras: halos de color muy suaves para que no quede plano */
+.dark-section:not(.hero),
+#conferencias {
+  background-image:
+    radial-gradient(38rem 26rem at 0% 0%, rgba(66, 133, 244, 0.14), transparent 70%),
+    radial-gradient(34rem 24rem at 100% 30%, rgba(139, 124, 246, 0.12), transparent 70%),
+    radial-gradient(30rem 22rem at 15% 100%, rgba(52, 168, 83, 0.08), transparent 70%);
+}
+
+/* Bloques "Espectáculo y Valor real": cristal + línea de color arriba + títulos en degradado */
+.feature-box {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%), #131b42;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 45px -20px rgba(0, 0, 0, 0.6);
+}
+.feature-box::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--g-blue-green);
+}
+.feature-box::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -80px;
+  top: -90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(66, 133, 244, 0.22), transparent 70%);
+  pointer-events: none;
+}
+.feature-box h4 {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-image: var(--g-blue-green);
+  display: inline-block;
+}
+.feature-grid .feature-box:nth-child(2)::before,
+.feature-grid .feature-box:nth-child(2) h4 { background-image: var(--g-red-yellow); }
+.feature-grid .feature-box:nth-child(2)::after { background: radial-gradient(circle, rgba(234, 67, 53, 0.18), transparent 70%); }
+.feature-grid .feature-box:nth-child(3)::before,
+.feature-grid .feature-box:nth-child(3) h4 { background-image: linear-gradient(115deg, #34a853, #fbbc05); }
+.feature-grid .feature-box:nth-child(3)::after { background: radial-gradient(circle, rgba(52, 168, 83, 0.18), transparent 70%); }
+.feature-grid .feature-box:nth-child(4)::before,
+.feature-grid .feature-box:nth-child(4) h4 { background-image: var(--g-blue-lilac); }
+.feature-grid .feature-box:nth-child(4)::after { background: radial-gradient(circle, rgba(139, 124, 246, 0.24), transparent 70%); }
+
+/* Bloques de conferencias: línea de color arriba */
+.program-card { position: relative; }
+.program-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--g-blue-green);
+}
+.program-card.main-program::before { background: var(--g-four); }
+.workshops-layout .program-card:nth-child(4n+2)::before { background: var(--g-red-yellow); }
+.workshops-layout .program-card:nth-child(4n+3)::before { background: var(--g-blue-lilac); }
+.workshops-layout .program-card:nth-child(4n+4)::before { background: linear-gradient(115deg, #34a853, #fbbc05); }
+
+/* Testimonios: comillas en degradado */
+.quote-icon {
+  opacity: 0.9;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: var(--g-blue-lilac);
+}
+.testimonials-marquee-content .testimonial-card:nth-child(3n+2) .quote-icon { background-image: var(--g-blue-green); }
+.testimonials-marquee-content .testimonial-card:nth-child(3n+3) .quote-icon { background-image: var(--g-red-yellow); }
+
+/* Botón principal con halo de color al pasar */
+.btn-primary:hover {
+  box-shadow: inset 0 1px 0 #fff, 0 10px 30px -8px rgba(66, 133, 244, 0.6), 0 0 0 1px rgba(139, 124, 246, 0.35);
+}
