@@ -1492,3 +1492,108 @@ footer {
     width: 250px;
   }
 }
+
+/* Banner ancho y sección "Detrás de cámaras" */
+.wide-photo {
+  aspect-ratio: 16 / 9;
+  margin-bottom: 1.5rem;
+}
+
+.wide-photo img {
+  object-position: 50% 55%;
+}
+
+.photo.selfie img {
+  object-position: 50% 60%;
+}
+
+.bts-section {
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 769px) {
+  .bts-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .bts-grid .photo {
+    aspect-ratio: auto;
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wide-photo {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* BLOQUEO DE SCROLL HORIZONTAL (robusto también en iOS Safari) */
+html,
+body {
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+.page-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* MÓVIL: fotos pequeñas y ordenadas */
+@media (max-width: 768px) {
+  .photo-grid,
+  .bts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .photo-grid .photo,
+  .photo-grid .photo:first-child,
+  .photo-grid .photo.portrait,
+  .photo-grid .photo.landscape,
+  .bts-grid .photo {
+    grid-column: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+
+  .photo:hover {
+    transform: none;
+  }
+
+  .wide-photo,
+  .skool-photo,
+  .trust-photo {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+  }
+
+  .about-image {
+    max-width: 200px;
+  }
+
+  .about-strip {
+    margin-top: 2rem;
+  }
+}
+
+/* Testimonios: tarjetas de igual altura (sin huecos entre filas) */
+.testimonials-marquee-content {
+  align-items: stretch;
+}
