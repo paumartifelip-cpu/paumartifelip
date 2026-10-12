@@ -1597,3 +1597,34 @@ img {
 .testimonials-marquee-content {
   align-items: stretch;
 }
+
+/* HERO: foto de fondo a pantalla completa, muy tenue */
+.video-background-wrapper {
+  background:
+    radial-gradient(ellipse 60% 50% at 18% 20%, rgba(66, 133, 244, 0.25), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 85% 80%, rgba(139, 124, 246, 0.2), transparent 70%),
+    linear-gradient(180deg, rgba(12, 18, 48, 0.25) 0%, rgba(12, 18, 48, 0.6) 100%),
+    url("img/hero-fondo.jpg") center / cover no-repeat,
+    #0c1230;
+}
+
+.video-background-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 18, 48, 0.6);
+  z-index: 0;
+}
+
+.video-overlay {
+  background: radial-gradient(ellipse at center, rgba(12, 18, 48, 0.55) 0%, rgba(12, 18, 48, 0.2) 70%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  text-shadow: 0 2px 24px rgba(12, 18, 48, 0.6);
+}
