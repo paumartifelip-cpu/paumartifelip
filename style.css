@@ -1645,7 +1645,6 @@ img {
 
 /* Tarjetas en secciones claras */
 .card.glass,
-.program-card:not(.glass-dark),
 .testimonial-card {
   background: var(--glass-light-bg) !important;
   backdrop-filter: blur(16px) saturate(160%);
