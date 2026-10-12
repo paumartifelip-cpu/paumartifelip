@@ -23,6 +23,8 @@
 }
 
 html {
+  overflow-x: hidden;
+  max-width: 100%;
   font-family: var(--font-family);
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -33,6 +35,13 @@ html {
 
 body {
   overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+section,
+footer {
+  overflow-x: clip;
 }
 
 a {
@@ -1427,30 +1436,28 @@ footer {
     max-width: 220px;
   }
 
-  /* Fotos: carrusel deslizable en vez de apilarse */
+  /* Fotos: cuadrícula compacta, sin scroll lateral */
   .photo-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 0.9rem;
-    margin: 0 -1.25rem;
-    padding: 0.5rem 1.25rem 2rem;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
   }
 
-  .photo-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .photo-grid .photo {
-    flex: 0 0 82%;
-    scroll-snap-align: center;
-  }
-
-  .photo-grid .photo.portrait {
-    flex-basis: 70%;
+  .photo-grid .photo,
+  .photo-grid .photo.portrait,
+  .photo-grid .photo.landscape {
+    flex: none;
+    width: 100%;
     aspect-ratio: 4 / 5;
+    border-radius: 14px;
+  }
+
+  .photo-grid .photo:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 10;
   }
 
   .photo-band {
