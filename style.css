@@ -1356,3 +1356,132 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* FOTOGRAFÍAS: profundidad (sombra, borde y degradado) */
+.photo {
+  position: relative;
+  border: 1px solid rgba(27, 34, 64, 0.08);
+  box-shadow: 0 24px 50px -18px rgba(27, 34, 64, 0.45), 0 6px 14px rgba(27, 34, 64, 0.12);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, transparent 55%, rgba(12, 18, 48, 0.35) 100%);
+  pointer-events: none;
+}
+
+.photo:hover {
+  transform: translateY(-4px);
+}
+
+.dark-section .photo {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 55px -16px rgba(66, 133, 244, 0.5), 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.25rem;
+  }
+
+  .vision-section {
+    padding: 7rem 1.25rem 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0.75rem;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Texto largo alineado a la izquierda: más legible */
+  .about-text-content {
+    text-align: left;
+  }
+
+  .about-text-content .section-heading {
+    text-align: center;
+  }
+
+  .about-image {
+    margin: 0 auto;
+    max-width: 220px;
+  }
+
+  /* Fotos: carrusel deslizable en vez de apilarse */
+  .photo-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0.9rem;
+    margin: 0 -1.25rem;
+    padding: 0.5rem 1.25rem 2rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .photo-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .photo-grid .photo {
+    flex: 0 0 82%;
+    scroll-snap-align: center;
+  }
+
+  .photo-grid .photo.portrait {
+    flex-basis: 70%;
+    aspect-ratio: 4 / 5;
+  }
+
+  .photo-band {
+    padding-top: 2rem;
+    padding-bottom: 0;
+  }
+
+  .about-strip {
+    margin-top: 2.5rem;
+  }
+
+  .skool-banner {
+    padding: 3rem 1.25rem;
+    border-radius: 28px;
+  }
+
+  .skool-photo,
+  .trust-photo {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .program-card {
+    padding: 1.5rem;
+  }
+
+  .testimonials-slider-wrapper {
+    gap: 1rem;
+  }
+
+  .testimonial-card {
+    width: 250px;
+  }
+}
