@@ -1628,3 +1628,24 @@ img {
 .hero-title {
   text-shadow: 0 2px 24px rgba(12, 18, 48, 0.6);
 }
+
+/* HERO: el fondo se mide contra la portada (no contra toda la página) */
+.hero {
+  position: relative;
+}
+
+/* Foto de fondo más visible, con el texto siempre legible */
+.video-background-wrapper {
+  background:
+    linear-gradient(180deg, rgba(12, 18, 48, 0.1) 0%, rgba(12, 18, 48, 0.45) 100%),
+    url("img/hero-fondo.jpg") center / cover no-repeat,
+    #0c1230;
+}
+
+.video-background-wrapper::before {
+  background: rgba(12, 18, 48, 0.42);
+}
+
+.video-overlay {
+  background: radial-gradient(ellipse 70% 55% at center, rgba(12, 18, 48, 0.55) 0%, rgba(12, 18, 48, 0) 100%);
+}
