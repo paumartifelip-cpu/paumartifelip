@@ -1283,3 +1283,76 @@ footer {
 .video-overlay {
   background: radial-gradient(circle, rgba(12, 18, 48, 0) 0%, rgba(12, 18, 48, 0.6) 100%);
 }
+
+/* FOTOGRAFÍAS */
+.photo {
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-border);
+  box-shadow: 0 12px 40px rgba(12, 18, 48, 0.25);
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.photo:hover img {
+  transform: scale(1.04);
+}
+
+.photo.landscape {
+  aspect-ratio: 4 / 3;
+}
+
+.photo.portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.photo.portrait img {
+  object-position: 50% 30%;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.photo-band {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.about-strip {
+  margin-top: 4rem;
+}
+
+.skool-photo,
+.trust-photo {
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+}
+
+.trust-photo {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid .photo.portrait {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.photo.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
