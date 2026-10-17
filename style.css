@@ -301,46 +301,33 @@ h4 {
   border-radius: 2px;
 }
 
-/* — Tres pilares — */
+/* — Tres pilares: "Ven. Entienden. Usan." en tipografía grande, sin cajas — */
 .vision-pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  margin-bottom: 5rem;
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
 .vision-pillar {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 2.5rem 2rem;
-  backdrop-filter: blur(10px);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.3s ease;
-}
-
-.vision-pillar:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.07);
-}
-
-.pillar-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .vision-pillar h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #f3f1ff;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
+  display: inline-block;
+  font-size: clamp(2.6rem, 4.6vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.9rem;
 }
 
 .vision-pillar p {
-  font-size: 0.95rem;
+  max-width: 260px;
+  margin: 0 auto;
+  font-size: 0.9rem;
   color: #8e96b8;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 /* — Cierre objetivo — */
@@ -363,7 +350,13 @@ h4 {
 
   .vision-pillars {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .vision-pillar h3 {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
   }
 
   .vision-divider {
