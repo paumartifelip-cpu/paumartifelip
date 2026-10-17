@@ -1875,3 +1875,58 @@ figure.photo {
     margin-bottom: 0.75rem;
   }
 }
+
+/* =========================================================
+   MÓVIL: aire entre bloques
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Separación bajo cada cuadrícula de fotos (antes quedaba pegada al bloque siguiente) */
+  .photo-grid.conf-gallery,
+  .photo-grid.about-strip {
+    margin-bottom: 2.5rem;
+  }
+  .photo-grid.about-strip { margin-top: 2.5rem; }
+
+  /* Galería de conferencias: 4 fotos en 2x2, sin huecos */
+  .photo-grid.conf-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Tarjetas de conferencias: más aire entre ellas y padding cómodo */
+  .program-card {
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .program-card h3 { font-size: 1.6rem; }
+  .workshops-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+  .workshops-layout .program-card { margin-bottom: 0; }
+
+  .flagship-program .program-price { font-size: 1.5rem; }
+  .program-price { font-size: 1.3rem; }
+
+  .feature-grid,
+  .comparison-grid { gap: 1.25rem; }
+}
+
+/* Testimonios: textos largos recortados para que las filas no dejen huecos enormes */
+.testimonial-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .testimonial-text {
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+  }
+  .testimonials-slider-wrapper { gap: 1.25rem; }
+
+  /* Título "La persona detrás..." va centrado en móvil: centrar también su rayita */
+  .about-text-content .section-heading::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
