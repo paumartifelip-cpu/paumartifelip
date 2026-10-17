@@ -1743,49 +1743,94 @@ figure.photo {
     radial-gradient(30rem 22rem at 15% 100%, rgba(52, 168, 83, 0.08), transparent 70%);
 }
 
-/* Bloques "Espectáculo y Valor real": cristal + línea de color arriba + títulos en degradado */
-.feature-box {
+/* Bloques "Espectáculo y Valor real": panel de 4 piezas, esquinas rectas,
+   títulos gruesos en mayúsculas con degradado y número grande perfilado */
+.feature-grid {
+  gap: 1px;
+  counter-reset: feature;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
+}
+.feature-box,
+.feature-box.highlight {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%), #131b42;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 45px -20px rgba(0, 0, 0, 0.6);
+  counter-increment: feature;
+  padding: 3.25rem 2.75rem 3rem;
+  border: none;
+  border-radius: 0;
+  background: #0f1638;
+  box-shadow: none;
+  transition: background 0.3s var(--ease);
 }
+.feature-box.hover-lift:hover {
+  transform: none;
+  box-shadow: none;
+  background: #141c46;
+}
+/* Franja de color gruesa arriba */
 .feature-box::before {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 3px;
+  height: 6px;
   background: var(--g-blue-green);
+  transition: height 0.3s var(--ease);
 }
+.feature-box:hover::before { height: 10px; }
+/* Número 01–04 grande y perfilado */
 .feature-box::after {
-  content: "";
+  content: counter(feature, decimal-leading-zero);
   position: absolute;
-  width: 220px;
-  height: 220px;
-  right: -80px;
-  top: -90px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(66, 133, 244, 0.22), transparent 70%);
+  top: 1.25rem;
+  right: 1.75rem;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.14);
   pointer-events: none;
 }
 .feature-box h4 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   background-image: var(--g-blue-green);
-  display: inline-block;
+  max-width: calc(100% - 7rem); /* hueco para el número 01–04 */
+}
+.feature-box p {
+  position: relative;
+  max-width: 34ch;
+  font-size: 1rem;
+  color: #a9b0cf;
 }
 .feature-grid .feature-box:nth-child(2)::before,
 .feature-grid .feature-box:nth-child(2) h4 { background-image: var(--g-red-yellow); }
-.feature-grid .feature-box:nth-child(2)::after { background: radial-gradient(circle, rgba(234, 67, 53, 0.18), transparent 70%); }
 .feature-grid .feature-box:nth-child(3)::before,
 .feature-grid .feature-box:nth-child(3) h4 { background-image: linear-gradient(115deg, #34a853, #fbbc05); }
-.feature-grid .feature-box:nth-child(3)::after { background: radial-gradient(circle, rgba(52, 168, 83, 0.18), transparent 70%); }
 .feature-grid .feature-box:nth-child(4)::before,
 .feature-grid .feature-box:nth-child(4) h4 { background-image: var(--g-blue-lilac); }
-.feature-grid .feature-box:nth-child(4)::after { background: radial-gradient(circle, rgba(139, 124, 246, 0.24), transparent 70%); }
+
+@media (max-width: 768px) {
+  .feature-box,
+  .feature-box.highlight { padding: 2.5rem 1.5rem 2.25rem; }
+  /* En móvil el número va encima del título, para que los títulos largos quepan */
+  .feature-box,
+  .feature-box.highlight { display: flex; flex-direction: column; align-items: flex-start; }
+  .feature-box::after { position: static; order: -1; font-size: 3rem; margin-bottom: 0.6rem; }
+  .feature-box h4 { font-size: 1.6rem; max-width: 100%; }
+}
 
 /* Bloques de conferencias: línea de color arriba */
 .program-card { position: relative; }
@@ -1919,7 +1964,6 @@ figure.photo {
   .workshops-layout .program-card { margin-bottom: 0; }
 
 
-  .feature-grid,
   .comparison-grid { gap: 1.25rem; }
 }
 
